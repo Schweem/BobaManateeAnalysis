@@ -1,6 +1,6 @@
 ## Boba Manatee Log Analysis Tool(s) 
 Currently includes:
-- Analysis script - /Tools/dataRetrieval.py
+- Analysis script - `/Tools/dataRetrieval.py`
 ----
 
 The analysis script uses an environment variable to connect to the hosted endpoint for the flask API that bridges the simulation to the mongoDB.
@@ -8,11 +8,11 @@ The analysis script uses an environment variable to connect to the hosted endpoi
 ----
 
 ### Instructions for use 
-- Clone this repository
-- Setup your .env file. These means defining "BASE_URL" in your .env OR replacing the .env call with a static link to endpoint (Line 9)
-  (.env file goes in the 'Tools' directory along side the python script)
-- Install requirements 'pip install -r requirements.txt' in the root directory
-- Run 'dataRetrival.py'
+- `Clone this repository`
+- `Setup your .env file.` These means defining "BASE_URL" in your .env OR replacing the .env call with a static link to endpoint (Line 9)
+  `(.env file goes in the 'Tools' directory along side the python script)`
+- Install requirements `'pip install -r requirements.txt'` in the root directory
+- Run `'dataRetrival.py'`
 
 ----
 
