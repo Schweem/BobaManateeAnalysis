@@ -26,4 +26,4 @@ Currently includes:
 
 ### Functionality 
 - Once run, the analysis script will connect to the API and get a list of session IDs. It will then extract all the logs for each unique session ID and generate a csv report of the log data. These CSV reports are then used by the report generation script (soon to come).
-- Running the server script will host the API, generally this isnt going to be the case. Ideally it is deployed via docker, DOCKERFILE to come. 
+- Running the server script will host the API, generally this isnt going to be the case. Ideally it is deployed via docker, DOCKERFILE included (mongoURI not included). 
