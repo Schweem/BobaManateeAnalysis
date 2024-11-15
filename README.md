@@ -1,6 +1,6 @@
 ## Boba Manatee Log Analysis Tool(s) 
 Currently includes:
-- Analysis script
+- Analysis script - /Tools/dataRetrieval.py
 ----
 
 The analysis script uses an environment variable to connect to the hosted endpoint for the flask API that bridges the simulation to the mongoDB.
