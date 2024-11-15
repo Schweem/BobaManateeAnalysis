@@ -20,7 +20,7 @@ Currently includes:
 - Install requirements `'pip install -r requirements.txt'` in the root directory (These are for both server and analysis)
   
 - Run `'dataRetrival.py'`, to pull data and build csv reports.
-- Run `'bobabackend'` to host the API locally 
+- Run `'bobabackend.py'` to host the API locally 
 
 ----
 
