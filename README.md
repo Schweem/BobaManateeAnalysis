@@ -4,6 +4,7 @@ Tools built for the Boba Manatee Simulation. Analysis tools for collecting data 
 Currently includes:
 - Analysis script - `/Tools/dataRetrieval.py`
 - Server API script - `/Tools/BobaServer/bobabackend.py`
+- Report generation tools - `/Tools/DataReportGen/program.py, utilities.py`
 ----
 
 - The analysis script uses an environment variable to connect to the hosted endpoint for the flask API that bridges the simulation to the mongoDB.
@@ -19,11 +20,13 @@ Currently includes:
 - `An additional ENV file is used in the server API, this will include MONGOURI the endpoint for mongoDB`
 - Install requirements `'pip install -r requirements.txt'` in the root directory (These are for both server and analysis)
   
-- Run `'dataRetrival.py'`, to pull data and build csv reports.
-- Run `'bobabackend.py'` to host the API locally 
+- Run `'dataRetrieval.py'`, to pull data and build csv reports.
+- Run `'bobabackend.py'` to host the API locally
+- Run `program.py` to generate aggregate summaries and individual csv reports from the data produced by `dataretrieval.py`
 
 ----
 
 ### Functionality 
 - Once run, the analysis script will connect to the API and get a list of session IDs. It will then extract all the logs for each unique session ID and generate a csv report of the log data. These CSV reports are then used by the report generation script (soon to come).
-- Running the server script will host the API, generally this isnt going to be the case. Ideally it is deployed via docker, DOCKERFILE included (mongoURI not included). 
+- Running the server script will host the API, generally this isnt going to be the case. Ideally it is deployed via docker, DOCKERFILE included (mongoURI not included).
+- The report generation tools are the final step of the pipeline. Once the data has been collected from the DB the python scripts are used to parse the data and produce reports. 
