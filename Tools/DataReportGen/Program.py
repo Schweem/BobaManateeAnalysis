@@ -18,11 +18,14 @@ for filename in os.listdir(input_dir):
 
         # Collect data for each participant
         sceneTimes = Utilities.getSceneTimes(filePath)
+        underWaterTime = Utilities.getUnderwaterSceneTime(filePath)
+        
         namesSelected = Utilities.getNamesSelected(filePath)
         timesOnCanvases = Utilities.getTimesSpentOnCanvases(filePath)
         grassesEaten = Utilities.getEventTypeCount(filePath, "seagrassEaten")
         numberOfBreaths = Utilities.getNumberOfBreaths(filePath)
         manateeInteractions = Utilities.getEventTypeCount(filePath, "manateeInteraction")
+        
         squeaksUsed = Utilities.getSqueaksUsed(filePath)
         flipperBumps = Utilities.getFlipperBumps(filePath)
         peanutManateeTime = Utilities.getPeanutManateeTime(filePath)
@@ -74,15 +77,44 @@ for filename in os.listdir(input_dir):
             "Seagrass eating time in Manatee Hell": grassesEaten,  # Reusing count for now
             "Total time in Manatee Hell": sceneTimes.get("5 - V2 ManateeHell", 0) * 1000,
             "Mail box - Viewing time": timesOnCanvases.get("Mailbox", 0),
+            "Mail box - Search Time":Utilities.getPostboxSearchTime(filePath),
+            
+            # New location school metrics 
+            "Tampa Bay school Slide 1 - Reading time": timesOnCanvases.get("Slide 1 - distance travelled", 0),
+            "Tampa Bay school Slide 2 - Reading time": timesOnCanvases.get("Slide 2 - water quality", 0),
+            "Tampa Bay school Slide 3 - Reading time": timesOnCanvases.get("Slide 3 - seagrass", 0),
+            "Tampa Bay school Slide 4 - Reading time": timesOnCanvases.get("Sl;ide 4 - Seagrass Loss", 0),
+            "Tampa Bay school Slide 5 - Reading time": timesOnCanvases.get("Slide 7 - Keep an Eye Out for Pollution", 0),
+            "Tampa Bay school - Total Reading time": sum([
+                timesOnCanvases.get("Slide 1 - distance travelled", 0),
+                timesOnCanvases.get("Slide 2 - water quality", 0),
+                timesOnCanvases.get("Slide 3 - seagrass", 0),
+                timesOnCanvases.get("Sl;ide 4 - Seagrass Loss", 0),
+                timesOnCanvases.get("Slide 7 - Keep an Eye Out for Pollution", 0)
+            ]),
+            "Tampa bay school time": sceneTimes.get("7 - NewLocationSchool", 0) * 1000,
+            
+            # boat hit scene 
+            "Boat Hit - Total time": sceneTimes.get("8 - Boat Hit Scene", 0) * 1000,
+            "Looking at Hit Manatee": timesOnCanvases.get("Cutscene Manatee (Boat hit)", 0),
+            
+            # multi player lobby scene 
+            "Multiplayer Lobby - Total time": sceneTimes.get("9 - MultiplayerLobby", 0) * 1000,
 
             # Multiplayer metrics
             "Squeaks Used": squeaksUsed,
-            "Flipper Bumps": flipperBumps,
-            "Time in Huddle": huddleTime,
+            "Flipper Bumps Initiated": flipperBumps,
+            "Times Initiated Huddle": huddleTime,
+            
+            "Find My Friends - Total time": sceneTimes.get("10 - Find Your Friends", 0) * 1000,
+            
+            # End scene metrics
+            "End Scene - Waving Manatee looking time": timesOnCanvases.get("Waving Manatee", 0),
+            "End Scene - Reading Time": timesOnCanvases.get("Conclusion Text", 0),
 
             # Totals
-            "Total underwater time": sum(sceneTimes.values()) * 1000, # TODO : make this scenes 1-11
-            "Total game time": sum(sceneTimes.values()) * 1000, # TODO : make this scenes 0 and 12 
+            "Total underwater time": underWaterTime * 1000,
+            "Total game time": sum(sceneTimes.values()) * 1000,
         }
 
         # Append data for each participant

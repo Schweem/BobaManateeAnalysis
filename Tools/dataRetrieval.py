@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv() # load environemt variables (just url for API as of now)
 
 # Base URL for the API
-BASE_URL = os.getenv("BASE_URL", "http://127.0.0.1:5000") # load URL from .env file. alternativley, replace and hardcode url 
+BASE_URL = os.getenv("ENDPOINT_URL", "http://127.0.0.1:5000") # load URL from .env file. alternativley, replace and hardcode url 
 
 # get_session_ids
 # args : none
@@ -51,7 +51,7 @@ def generate_csv_report(session_id, telemetry_logs):
             writer.writeheader()
             for log in telemetry_logs:
             	
-            	# pre flight checks, ensure nice and clean data is writen
+                # pre flight checks, ensure nice and clean data is writen
             	# textContent handles turning the target from lookingAt logs into textContent. This ensures backwards compatibility with analysis.py
             	
             	# we check the vector data ahead of time too, only writing it out if the data is not default 
@@ -62,7 +62,7 @@ def generate_csv_report(session_id, telemetry_logs):
                     
                 vec = log.get("vec", "") # check the vector content
                 if vec == {'x': 0.0, 'y': 0.0, 'z': 0.0}: # if its the default value
-                	vec = "" # dont write, keeps logs cleaner (this is how the old one worked)
+                    vec = "" # dont write, keeps logs cleaner (this is how the old one worked)
             	
                 # Write only fields that match the header
                 writer.writerow({
