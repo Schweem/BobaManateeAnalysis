@@ -3,8 +3,8 @@ Tools built for the Boba Manatee Simulation. Analysis tools for collecting data 
 
 Currently includes:
 - Analysis script - `/Tools/dataRetrieval.py`
+- Report generation tools - `/Tools/program.py, utilities.py`
 - Server API script - `/Tools/BobaServer/bobabackend.py`
-- Report generation tools - `/Tools/DataReportGen/program.py, utilities.py`
 ----
 
 - The analysis script uses an environment variable to connect to the hosted endpoint for the flask API that bridges the simulation to the mongoDB.
@@ -14,15 +14,26 @@ Currently includes:
 ----
 
 ### Instructions for use 
+
+## Setting up
+
+- `Ensure Python 3.11+ is installed`
 - `Clone this repository`
 - `Setup your .env file.` These means defining "BASE_URL" in your .env OR replacing the .env call with a static link to endpoint (Line 9)
   `(.env file goes in the 'Tools' directory along side the python script)`
-- `An additional ENV file is used in the server API, this will include MONGOURI the endpoint for mongoDB`
+    - https://www.geeksforgeeks.org/how-to-create-and-use-env-files-in-python/
 - Install requirements `'pip install -r requirements.txt'` in the root directory (These are for both server and analysis)
-  
+
+## Collecting Data from the server 
 - Run `'dataRetrieval.py'`, to pull data and build csv reports.
-- Run `'bobabackend.py'` to host the API locally
+  - Ensure .env file is prepared
+ 
+## Generating reports from server data 
 - Run `program.py` to generate aggregate summaries and individual csv reports from the data produced by `dataretrieval.py`
+  - `This script functions by taking the data pulled from running dataRetrieval.py and uses it for individual and aggregate report generation. Please ensure that you have done one of the following before running this script`
+    - Setup a .env file as described above and run `dataRetrieval.py` to pull logs from the backend server.
+    - Alternativley, if you have `Collected data locally on the headset`, please copy it from the headset into a directory called `telemetry_reports`, you do this in place of the the retreival script creating that directory for you.
+  - With a present telemtry reports directory the script will read in all of the data and produce individually formatted csv reports as well as an aggregate excel summary of the session.   
 
 ----
 
