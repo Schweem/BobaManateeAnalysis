@@ -2,7 +2,7 @@
 Tools built for the Boba Manatee Simulation. Analysis tools for collecting data logs and building csv reports, as well as the server API script used on the deployed server. Developed by Seamus Jackson working under the direction of Tania Roy at New College of Florida. 
 
 Currently includes:
-- Analysis script - `/Tools/dataRetrieval.py`
+- Log collection script - `/Tools/dataRetrieval.py`
 - Report generation tools - `/Tools/program.py, utilities.py`
 - Server API script - `/Tools/BobaServer/bobabackend.py`
 ----
