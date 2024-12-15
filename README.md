@@ -47,7 +47,7 @@ Currently includes:
 - Run `program.py` to generate aggregate summaries and individual csv reports from the data produced by `dataretrieval.py`
   - `This script functions by taking the data pulled from running dataRetrieval.py and uses it for individual and aggregate report generation. Please ensure that you have done one of the following before running this script`
     - Setup a .env file as described above and run `dataRetrieval.py` to pull logs from the backend server.
-    - Alternativley, if you have `Collected data locally on the headset`, please copy it from the headset into a directory called `telemetry_reports`, you do this in place of the the retreival script creating that directory for you.
+    - Alternativley, if you have `Collected data locally on the headset`, please copy it from the headset into a directory called `telemetry_reports` into the tools directory with the rest of the python scripts and your .env file, you do this in place of the the retreival script creating that directory for you.
   - With a present telemtry reports directory the script will read in all of the data and produce individually formatted csv reports as well as an aggregate excel summary of the session.   
 
 ----
