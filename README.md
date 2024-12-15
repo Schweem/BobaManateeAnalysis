@@ -19,11 +19,14 @@ Currently includes:
 
 - `Ensure Python 3.11+ is installed`
 - `Clone this repository`
+  - `with git installed` do `git clone https://github.com/Schweem/BobaManateeAnalysis.git`
+  - If you're using github desktop, paste the link in there 
 - `Setup your .env file.` These means defining "ENDPOINT_URL" in your .env
   `(.env file goes in the 'Tools' directory along side the python script)`
     - https://www.geeksforgeeks.org/how-to-create-and-use-env-files-in-python/
     - `touch .env`, `micro .env`, `vi .env`, `nano .env`, etc... This creates the file
-    - Once created, open it and in the first line write `ENDPOINT_URL = {APIURLHERE}`
+    - Once created, open it and in the first line write `ENDPOINT_URL = APIURLHERE`
+      - you dont need any quotes in here. If you want to put them around the API URL that is OK but not needed.  
 - Install requirements `'pip install -r requirements.txt'` in the root directory (These are for both server and analysis)
   - pip is a python package manager that should be installed alongside python. Running this command will attempt to install of the packages listed inside of the requirements file. 
 
@@ -35,7 +38,7 @@ Currently includes:
   - Ensure .env file is prepared
   - `This is accomplished by creating a file called .env in the tools directory`
   - `Inside of this file you will write the following:`
-    - `ENDPOINT_URL = {APIURLHERE}`, APIURLHERE refers to the cloud run deployment.
+    - `ENDPOINT_URL = APIURLHERE`, APIURLHERE refers to the cloud run deployment.
 - `once .env file and requirements are installed`, you can type `python dataRetrieval.py` if that doesn't work you might be on a different OS than I am or not using a virutal environment, in which case try typing `python3 dataRetrieval.py` 
 
 ----
