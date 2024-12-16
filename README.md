@@ -26,6 +26,8 @@ Currently includes:
     - https://www.geeksforgeeks.org/how-to-create-and-use-env-files-in-python/
     - `touch .env`, `micro .env`, `vi .env`, `nano .env`, etc... This creates the file
     - Once created, open it and in the first line write `ENDPOINT_URL = APIURLHERE`
+    - ![image](https://github.com/user-attachments/assets/041bab5b-7aa0-43b0-964a-5f8de28ebbaf)
+
       - you dont need any quotes in here. If you want to put them around the API URL that is OK but not needed.  
 - Install requirements `'pip install -r requirements.txt'` in the root directory (These are for both server and analysis)
   - pip is a python package manager that should be installed alongside python. Running this command will attempt to install of the packages listed inside of the requirements file. 
